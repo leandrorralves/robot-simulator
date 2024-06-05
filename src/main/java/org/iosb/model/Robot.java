@@ -7,8 +7,8 @@ import org.iosb.util.Orientation;
 @Data
 public class Robot {
 
-    private int posX = 0;
-    private int posY = 0;
+    private int rowPosition = 0;
+    private int columnPosition = 0;
 
     private Orientation orientation;
 
@@ -31,20 +31,23 @@ public class Robot {
     private void moveForward() {
         switch (this.orientation) {
             case N:
-                this.posX--;
+                this.rowPosition--;
                 break;
             case W:
-                this.posY--;
+                this.columnPosition--;
                 break;
             case S:
-                this.posX++;
+                this.rowPosition++;
                 break;
             case E:
-                this.posY++;
+                this.columnPosition++;
                 break;
             default:
                 throw new BusinessException("Invalid orientation detected while moving forward!");
         }
     }
 
+    public String getPosition() {
+        return this.rowPosition + " " + this.columnPosition + " " + this.getOrientation().name();
+    }
 }

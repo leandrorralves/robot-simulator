@@ -8,7 +8,7 @@ public class Main {
         String fileName = args[0] != null ? args[0] : "src/main/resources/test.txt";
 
         RobotSimulator robotSimulator = new RobotSimulator(fileName);
-        robotSimulator.testMovements();
+        robotSimulator.executeSimulation();
 
     }
 }
