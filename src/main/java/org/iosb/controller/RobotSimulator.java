@@ -100,10 +100,10 @@ public class RobotSimulator {
 
     private void validateMovement(char movementCommand) {
         if (movementCommand == 'M' &&
-                (Orientation.N.equals(robot.getOrientation()) && robot.getRowPosition() == 0) ||
-                (Orientation.W.equals(robot.getOrientation()) && robot.getColumnPosition() == 0) ||
-                (Orientation.S.equals(robot.getOrientation()) && robot.getRowPosition() == tableRowSize-1) ||
-                (Orientation.E.equals(robot.getOrientation()) && robot.getRowPosition() == tableColumnSize-1)) {
+                ((Orientation.N.equals(robot.getOrientation()) && robot.getRowPosition() == 0) ||
+                 (Orientation.W.equals(robot.getOrientation()) && robot.getColumnPosition() == 0) ||
+                 (Orientation.S.equals(robot.getOrientation()) && robot.getRowPosition() == tableRowSize - 1) ||
+                 (Orientation.E.equals(robot.getOrientation()) && robot.getColumnPosition() == tableColumnSize - 1))) {
             throw new BusinessException("Robot has reached at the table's end while moving forward!");
         }
     }
